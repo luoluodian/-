@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数去去重</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //原数组
+  let arr = ['1','2','2','4','5','2','6','1','4']
+  //新数组
+ 
+  //原数组和新数组进行比较
+  function f(arr) {
+    let t = []
+    t[0] = arr[0]
+    //arr 中的元素
+    for(let i = 0; i<arr.length; i++){
+      //t 中的每个元素
+      for(let j = 0; j<t.length; j++){
+        //当有相等的时候 结束内循环
+        if(t[j] == arr[i]){
+          break
+        }
+        //比完插入
+        if(j == t.length-1){
+          t.push(arr[i])
+        }
+      }
+    }
+
+    for(val of t){
+      console.log(val);
+    }
+  }
+
+  f(arr)
+</script>
+</html>
