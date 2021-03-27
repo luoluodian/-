@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>移动端rem适配</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: red;
+    }
+    /* html 根元素的字体大小设置为屏幕区域的宽 */
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+</body>
+<script>
+  window.onload = function () {
+    // 获取屏幕的宽度
+    let width = document.documentElement.clientWidth
+    // 获取Html
+    let htmlNode = document.querySelector('html')
+
+    // 设置字体大小
+    htmlNode.style.fontSize = width + 'px'
+  }
+</script>
+</html>
