@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冒泡排序</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let arr = ['1','4','2','5','3']
+
+  function f(arr) {
+    let arr1 = []
+    let a = 0
+    let b = arr.length 
+    //次数   b - 1 次   
+    for(let i = 0; i < b; i++){
+      if(arr[i] >= arr[i+1]){
+        a = arr[i]
+        arr[i] = arr[i+1]
+        arr[i+1] = a 
+      }
+    }
+    for(val of arr){
+      console.log(val);
+    }
+  }
+//冒泡排序
+  function f2(arr) {
+    //最外层 轮数
+    for(let i = 0; i<arr.length-1; i++){
+      //交换次数
+      for(let j = 0;j<arr.length-1-i; j++){
+        //交换
+        if(arr[j] >= arr[j+1]){
+          let temp = arr[j]
+          arr[j] = arr[j+1]
+          arr[j+1] = temp 
+        }
+      }
+    }
+    for(val of arr){
+      console.log(val);
+    }
+  }
+  f2  (arr)
+
+</script>
+</html>

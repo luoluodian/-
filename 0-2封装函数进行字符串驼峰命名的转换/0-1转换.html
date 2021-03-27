@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串转换</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //已知字符串 foo = ‘get-element-by-id’,写一个function将其转换成驼峰命名法‘getElementById’
+  var foo = 'get-element-by-id'
+
+  //根据某个字符进行切割   split
+  var arr = foo.split('-')
+  //获取每个元素中的第一个字符，并且转换成大写
+  //console.log(arr[1].charAt(0).toUpperCase() + arr[1].substr( 1, arr[1].length-1))
+  // var el = ''
+  // for(let val of arr) {
+  //   el += val.charAt(0).toUpperCase() + val.substr( 1, val.length-1)
+  // }
+
+  // for(let i = 1; i<arr.length; i++){
+  //   arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substr( 1, arr[1].length-1)
+  // }
+  //console.log(arr.join(''));
+
+  //自定义函数
+  function toString(foo) {
+    var arr = foo.split('-')
+    for(let i = 1; i<arr.length; i++){
+      arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substr( 1, arr[1].length-1)
+    }
+    return arr.join('')
+  }
+
+  console.log(toString(foo));
+  //截取字符串
+</script>
+</html>
