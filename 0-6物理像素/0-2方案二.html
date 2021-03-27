@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- initial-scale == 缩放比 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>物理像素的实方案二</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #box {
+      width: 200px;
+      height: 200px;
+      /* 1px == css 像素 */
+      position: relative;
+    } 
+    /* 伪类 */
+    #box::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: #000;
+    }
+    @media screen and(-webkit-min-device-pixed-ratio: 2){
+      #box::before{
+        transform: scaleY(0.5);
+      }
+    }
+    @media screen and(-webkit-min-device-pixed-ratio: 3){
+      #box::before{
+        transform: scaleY(0.33333);
+      }
+    }
+  </style>
+  <!-- 像素比 = 物理像素/css像素 -->
+</head>
+<body>
+  <div id="box">
+
+  </div>
+</body>
+<script>
+  window.onload = function() {
+  
+  }
+
+</script>
+</html>

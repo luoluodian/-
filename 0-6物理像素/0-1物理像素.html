@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- initial-scale == 缩放比 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>物理像素的实现</title>
   <style>
     * {
@@ -16,9 +16,7 @@
       height: 0.5rem;
       /* 1px == css 像素 */
       border-bottom: 1px solid #000;
-    }
-
-   
+    } 
   </style>
   <!-- 像素比 = 物理像素/css像素 -->
 </head>
@@ -30,17 +28,17 @@
 <script>
   window.onload = function() {
     //像素比  不同屏幕dpr是不一样的
-    var dpr = window.devicePixelRatio
+    let dpr = window.devicePixelRatio
     console.log(dpr);
-    //缩放比
-    var scale = 1/dpr
+    //缩放比 initial-scale
+    let scale = 1/dpr
 
+    console.log(scale);
     //获取屏幕区的宽
     let width = document.documentElement.clientWidth
     //获取mate标签
     var metaNode = document.querySelector('meta[name="viewport"]')
-    metaNode.setAttribute( 'content','width=device-w
-    idth, initial-scale=' + scale +'user-scalable=no')
+    metaNode.setAttribute( 'content','width=device-width, initial-scale=' + scale +',user-scalable=no')
 
     //页面中的元素 宽度和高度 比例反向乘回来
 
