@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>综合面试题</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function Foo() {
+    getName = function () {
+      alert(1);
+      return this  //返回this  返回了window
+    }
+  }
+
+  Foo.getName = function () {
+    alert(2)
+  }
+
+  Foo.prototype.getName = function () {
+    alert(3)
+  }
+
+  var getName = function () {
+    alert(4)
+  }
+
+  function getName() {
+    alert(5)
+  }
+  // 第一步  变量提升
+/*
+  function Foo() {
+    getName = function () {
+      alert(1);
+      return this
+    }
+  }
+
+  保留函数  去除这个
+  var getName = function () {
+    alert(4)
+  }
+
+  function getName() {
+    alert(5)
+  }
+
+  名字冲突怎么办呢？  保留函数  
+
+  getName = function () {
+    alert(4)
+  }
+
+  第二步
+
+
+*/
+  //写出下列结果
+ 
+  Foo.getName(); //alert(2)
+  getName()   //4
+  Foo().getName() // (Foo()).getName => window.getName
+  getName()  //1
+  new Foo.getName()  //new (Foo.getName)()  -->new 函数调用会去执行这个函数  2
+  new Foo().getName() //(new Foo()).getName --> Foo.getName() //3
+  new new Foo().getName()   //3
+
+</script>
+</html>
