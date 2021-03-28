@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跨域问题</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /*面试题： 什么是跨域，解决跨域有什么办法   
+  1.同源策略： 
+  浏览器的安全策略  保证浏览器安全运行的一个方式
+  浏览器的  协议名，域名，端口号必须完全一样  
+  2.跨域
+  违背了同源策略就会产生跨域
+  不同的服务器提供不同的功能 不同服务的域名等可能不一样
+  3.解决跨域
+  jsonp：前端加后端
+  cors ： 后台设置
+  服务器代理等
+  
+  jsonp运用浏览的标签进行跨域
+  */
+
+
+  // 创建script
+  let script = document.createElement('script')
+  function getData(data) {
+    //数据请求回来会被触发的函数
+    console.log(data);
+  }
+
+  //设置请求的地址  script 中的 src属性
+
+  // script.src = 'http://127.0.0.1:5500?callback=getData'
+
+  //让标签生效
+  document.body.appendChild(script)
+</script>
+</html>
