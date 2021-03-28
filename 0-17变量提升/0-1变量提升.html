@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>变量提升</title>
+</head>
+<body>
+   
+</body>
+<script>
+  console.log(username);
+  var username = 'aaa' 
+  fun() 
+  function fun() {
+    console.log('fun()');
+  }
+
+
+  //undefined   fun()
+  /* 执行上下文  执行上下文对象 */
+
+  //理解： 执行代码的环境
+  //时机  代码正式执行之前会进入到执行环境
+
+  /* 1.创建变量对象：
+  - 变量
+  - 函数及函数的参数
+    2.确认this的指向  
+  - 全局 window
+  - 局部 调用其的对象
+   3. 创建作用域链
+   - 父级作用域链 + 当前变量对象
+   4.扩展 
+   ECOBJ: {
+     
+   }
+  */
+</script>
+</html>

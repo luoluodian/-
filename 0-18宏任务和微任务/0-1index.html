@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宏任务和微任务</title>
+</head>
+<body>
+  
+</body>
+
+<script>
+  /*js是单线程的  主线程
+    异步 -》 回调函数
+  */
+  
+  //宏任务
+  /* 
+    分类： settimeout setinterval   requertAnimationFrame
+    1.宏任务所在的队列就是宏任务队列
+    2.第一个宏任务  队列中只有一个任务： 执行主线程的js代码
+    3.宏任务队列可以有多个
+    */
+
+
+   //微任务
+  /* 
+  分类： new promise().then() process.nexttick
+  1.微任务所在的队列就是微任务队列
+  2.只有一个微任务队列、
+  3.在上一个宏任务队列执行完毕之后，如果有微任务队列就执行微任务队列中的所有的任务
+  */
+</script>
+</html>
