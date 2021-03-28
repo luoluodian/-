@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>node.js</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* nodejs 事件轮询机制 */
+
+  setTimeout(() => {
+    console.log('settimeout');
+  }, 0)
+
+  setImmediate(() => {
+    console.log('setImmediate');
+  })
+
+
+  process.nextTick(() => {
+    console.log('process.nextTick');
+  })
+
+  /* 顺序： process  settimeout setImmediate   
+    libuv 库执行的
+
+    六个阶段： 
+    1.timers 定时器阶段
+    计时器和到点执行的定时器回调函数
+    2.ponding callbacks 
+    某些系统操作的（tcp类型错误）的回调函数
+    3.idle prepare 
+    准备工作
+    4 poll阶段
+    论巡阶段 轮询队列
+    如果轮巡队列不为空    依次取出轮询队列的第一个回调函数   直到为空和达到系统的最大限制  
+    如果为空要怎么办呢
+    if之前设置过这个函数，将会直接进行到下一个阶段   要是没有的话就会在当前poll阶段等待，等待回调函数被添加进来
+    如果定时器到点了，也会去下一个阶段
+    5.check 查阶段
+    执行setImmediate设置的回调函数
+    6.close callbacks 关闭阶段
+    执行close回调函数
+
+    
+  */
+</script>
+</html>
