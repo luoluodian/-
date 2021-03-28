@@ -31,5 +31,25 @@
   2.只有一个微任务队列、
   3.在上一个宏任务队列执行完毕之后，如果有微任务队列就执行微任务队列中的所有的任务
   */
+
+
+
+  console.log('-------------------------------------------');
+
+
+  setTimeout(() => {
+    console.log('settimeout');
+  }, 0);
+
+
+  new Promise((resolve, reject) => {
+    for(let i = 0; i < 5; i++){
+      console.log(i);
+    }
+    resolve() //修改promise实例对象的状态为成功的状态
+  }).then(() => {
+    console.log('promise实例成功回调函数');
+  })
+  console.log('---------------------------------');
 </script>
 </html>
